@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Home as HomeIcon, Calculator, Settings as SettingsIcon } from "lucide-react";
 
-const ROUTES = ["/", "/estimation", "/settings"];
+const LEGAL_ROUTES = ["/mentions-legales", "/confidentialite"];
 const TABS = [
   { path: "/", label: "Accueil", Icon: HomeIcon },
   { path: "/estimation", label: "Estimation", Icon: Calculator },
@@ -12,7 +12,7 @@ const TABS = [
 export default function MobileNav() {
   const location = useLocation();
   const navigate = useNavigate();
-  if (!ROUTES.includes(location.pathname)) return null;
+  const activePath = LEGAL_ROUTES.includes(location.pathname) ? "/" : location.pathname;
 
   return (
     <nav
@@ -21,12 +21,12 @@ export default function MobileNav() {
     >
       <div className="flex">
         {TABS.map(({ path, label, Icon }) => {
-          const active = location.pathname === path;
+          const active = activePath === path;
           return (
             <button
               key={path}
               type="button"
-              onClick={() => { if (!active) navigate(path); }}
+              onClick={() => navigate(path)}
               className="flex-1 flex flex-col items-center gap-1 py-2"
             >
               <Icon className={`w-5 h-5 ${active ? "text-accent" : "text-muted-foreground"}`} />

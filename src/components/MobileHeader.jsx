@@ -2,17 +2,17 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { ChevronLeft, Home as HomeIcon } from "lucide-react";
 
-const ROUTES = ["/", "/estimation", "/settings"];
 const TITLES = {
   "/": "Chevillette.fr",
   "/estimation": "Estimation",
   "/settings": "Paramètres",
+  "/mentions-legales": "Mentions légales",
+  "/confidentialite": "Confidentialité",
 };
 
 export default function MobileHeader() {
   const navigate = useNavigate();
   const location = useLocation();
-  if (!ROUTES.includes(location.pathname)) return null;
   const canBack = location.pathname !== "/";
   const isHome = location.pathname === "/";
 
