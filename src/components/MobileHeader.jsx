@@ -24,7 +24,7 @@ export default function MobileHeader() {
       <div className="flex items-center justify-between px-2 py-4">
         <button
           type="button"
-          onClick={() => canBack && navigate(-1)}
+          onClick={() => { if (canBack) { if (window.history.state?.idx > 0) navigate(-1); else navigate("/"); } }}
           className={`w-11 h-11 flex items-center justify-center rounded-xl text-primary ${canBack ? "" : "opacity-0 pointer-events-none"}`}
         >
           <ChevronLeft className="w-6 h-6" />
