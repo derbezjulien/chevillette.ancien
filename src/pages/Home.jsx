@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { LOGO_FULL_URL } from "@/lib/branding";
 import useSeo from "@/hooks/use-seo";
+import PullToRefresh from "@/components/PullToRefresh";
 
 export default function Home() {
   useSeo({ title: "Estimation immobilière gratuite en ligne | Chevillette.fr", description: "Estimez gratuitement votre maison ou appartement à partir des ventes réelles de votre commune (DVF, données de l'État). Estimation indicative.", path: "/" });
   return (
+    <PullToRefresh onRefresh={async () => { await new Promise(r => setTimeout(r, 600)); }}>
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border/60">
@@ -93,5 +95,6 @@ export default function Home() {
 
 
     </div>
+    </PullToRefresh>
   );
 }

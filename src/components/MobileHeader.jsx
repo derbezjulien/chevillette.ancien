@@ -25,7 +25,7 @@ export default function MobileHeader() {
         <button
           type="button"
           onClick={() => canBack && navigate(-1)}
-          className={`w-10 h-10 flex items-center justify-center rounded-xl text-primary ${canBack ? "" : "opacity-0 pointer-events-none"}`}
+          className={`w-11 h-11 flex items-center justify-center rounded-xl text-primary ${canBack ? "" : "opacity-0 pointer-events-none"}`}
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -41,7 +41,7 @@ export default function MobileHeader() {
             <span className="font-heading font-semibold text-primary">{TITLES[location.pathname]}</span>
           )}
         </div>
-        <div className="w-10" />
+        <div className="w-11" />
       </div>
     </header>
   );
