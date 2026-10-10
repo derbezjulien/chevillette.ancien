@@ -16,7 +16,6 @@ import Home from '@/pages/Home';
 import Estimation from '@/pages/Estimation';
 import MentionsLegales from '@/pages/MentionsLegales';
 import Confidentialite from '@/pages/Confidentialite';
-import Settings from '@/pages/Settings';
 
 const pageVariants = {
   initial: { opacity: 0, x: 24 },
@@ -41,7 +40,6 @@ const AnimatedRoutes = () => {
           <Route path="/estimation" element={<Estimation />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="/confidentialite" element={<Confidentialite />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </motion.div>

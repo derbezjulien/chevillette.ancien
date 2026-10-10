@@ -12,7 +12,6 @@ import VetusteSlider from "@/components/VetusteSlider";
 import PriceTrendCard from "@/components/PriceTrendCard";
 import { LOGO_MARK_URL } from "@/lib/branding";
 import useSeo from "@/hooks/use-seo";
-import PullToRefresh from "@/components/PullToRefresh";
 
 const euro = new Intl.NumberFormat("fr-FR", {
   style: "currency",
@@ -236,7 +235,6 @@ export default function Estimation() {
   }, [selected, surface, propertyType, terrainSurface, vetuste]);
 
   return (
-    <PullToRefresh onRefresh={async () => { if (result) await estimate(); }}>
     <div className="min-h-screen bg-background">
       <main className="max-w-3xl mx-auto px-6 py-10">
         <div className="mb-8">
@@ -468,6 +466,5 @@ export default function Estimation() {
         />
       </main>
     </div>
-    </PullToRefresh>
   );
 }

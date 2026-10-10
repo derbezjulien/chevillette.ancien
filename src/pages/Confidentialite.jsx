@@ -27,7 +27,7 @@ export default function Confidentialite() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              La protection de vos données personnelles est une priorité pour Chevillette.fr. Cette page vous explique comment nous traitons vos données lors de votre navigation sur www.chevillette.fr.
+              La protection de vos données personnelles est une priorité pour Chevillette.fr. Cette page vous explique comment nous traitons vos données lors de votre navigation sur l'application Chevillette.
             </p>
             <Section title="Responsable du traitement">
               <p>Responsable du traitement : Julien Derbez.</p>
@@ -40,7 +40,7 @@ export default function Confidentialite() {
               <p>L'application Chevillette n'affiche aucune publicité, ne demande aucun compte et n'utilise pas de cookies publicitaires.</p>
             </Section>
             <Section title="3. Données de navigation (Analytics)">
-              <p>Nous pouvons être amenés à utiliser des outils de mesure d'audience anonymes pour comprendre comment notre site est utilisé et l'améliorer (pages visitées, temps passé, type d'appareil). Ces données sont anonymisées et ne permettent pas de vous identifier personnellement.</p>
+              <p>Nous pouvons être amenés à utiliser des outils de mesure d'audience anonymes pour comprendre comment notre application est utilisée et l'améliorer (pages visitées, temps passé, type d'appareil). Ces données sont anonymisées et ne permettent pas de vous identifier personnellement.</p>
             </Section>
             <Section title="4. Vos droits (RGPD)">
               <p>Conformément à la réglementation européenne (RGPD) et à la loi Informatique et Libertés, bien que nous ne stockions pas de données personnelles nominatives via notre formulaire d'estimation, vous disposez d'un droit d'accès, de rectification et d'effacement des données qui pourraient vous concerner.</p>

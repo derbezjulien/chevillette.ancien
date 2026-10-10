@@ -1,45 +1,32 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ChevronLeft, Home as HomeIcon } from "lucide-react";
-
-const TITLES = {
-  "/": "Chevillette.fr",
-  "/estimation": "Estimation",
-  "/settings": "Paramètres",
-  "/mentions-legales": "Mentions légales",
-  "/confidentialite": "Confidentialité",
-};
+import { ChevronLeft } from "lucide-react";
+import { LOGO_MARK_URL } from "@/lib/branding";
 
 export default function MobileHeader() {
   const navigate = useNavigate();
   const location = useLocation();
   const canBack = location.pathname !== "/";
-  const isHome = location.pathname === "/";
 
   return (
     <header
-      className="md:hidden sticky top-0 z-30 bg-card/90 backdrop-blur-sm border-b border-border/60"
+      className="md:hidden sticky top-0 z-30 bg-[#0F1B2A] border-b border-[#CBA328]/20"
       style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
-      <div className="flex items-center justify-between px-2 py-4">
+      <div className="flex items-center justify-between px-2 py-2.5">
         <button
           type="button"
           onClick={() => { if (canBack) { if (window.history.state?.idx > 0) navigate(-1); else navigate("/"); } }}
-          className={`w-11 h-11 flex items-center justify-center rounded-xl text-primary ${canBack ? "" : "opacity-0 pointer-events-none"}`}
+          className={`w-11 h-11 flex items-center justify-center rounded-xl text-white ${canBack ? "" : "opacity-0 pointer-events-none"}`}
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
-        <div className="flex items-center justify-center gap-3">
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary dark:bg-card text-accent ring-1 ring-accent/30">
-            <HomeIcon className="w-8 h-8" />
+        <div className="flex items-center justify-center gap-2.5">
+          <img src={LOGO_MARK_URL} alt="" className="h-9 w-auto object-contain" />
+          <span className="font-heading font-bold text-xl leading-none whitespace-nowrap">
+            <span className="text-white">chevillette</span>
+            <span className="text-[#CBA328]">.fr</span>
           </span>
-          {isHome ? (
-            <span className="font-serif text-2xl font-semibold tracking-tight text-accent">
-              Chevillette.fr
-            </span>
-          ) : (
-            <span className="font-heading font-semibold text-primary">{TITLES[location.pathname]}</span>
-          )}
         </div>
         <div className="w-11" />
       </div>

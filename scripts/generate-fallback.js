@@ -3,7 +3,7 @@
  * generate-fallback.js
  * ---------------------------------------------------------------------------
  * Génère un dictionnaire national compressé des prix moyens au m² par commune,
- * destiné au mode dégradé de l'estimation immobilière (ImmoEstime France).
+ * destiné au mode dégradé de l'estimation immobilière (Chevillette).
  *
  * Source : « Indicateurs Immobiliers par commune et par année » (data.gouv.fr)
  *   https://www.data.gouv.fr/datasets/indicateurs-immobiliers-par-commune-et-par-annee-prix-et-volumes-sur-la-periode-2014-2024

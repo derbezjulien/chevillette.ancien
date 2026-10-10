@@ -1,10 +1,10 @@
-# L'Indice Immo
+# Chevillette (application mobile)
 
-Application d'estimation immobilière indicative, fondée sur les ventes réelles enregistrées dans les communes françaises.
+Application mobile d'estimation immobilière indicative, fondée sur les ventes réelles enregistrées dans les communes françaises.
 
 ## But de l'application
 
-L'Indice Immo permet d'estimer la valeur d'un bien immobilier à partir de son adresse et de sa surface. L'estimation s'appuie sur les ventes réelles récentes de la commune, issues des données ouvertes de l'État.
+Chevillette permet d'estimer la valeur d'un bien immobilier à partir de son adresse et de sa surface. L'estimation s'appuie sur les ventes réelles récentes de la commune, issues des données ouvertes de l'État.
 
 ## Sources de données
 
