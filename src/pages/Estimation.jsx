@@ -8,9 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import SaleDetailDialog from "@/components/SaleDetailDialog";
-import AdBanner from "@/components/AdBanner";
 import VetusteSlider from "@/components/VetusteSlider";
-import DownloadAttestationButton from "@/components/DownloadAttestationButton";
 import PriceTrendCard from "@/components/PriceTrendCard";
 import { LOGO_MARK_URL } from "@/lib/branding";
 import useSeo from "@/hooks/use-seo";
@@ -415,21 +413,6 @@ export default function Estimation() {
               </CardContent>
             </Card>
 
-            <div className="mb-8">
-              <DownloadAttestationButton
-                data={{
-                  address: selected?.properties?.label,
-                  propertyType,
-                  surface,
-                  terrainSurface,
-                  vetuste,
-                  estimatedPrice: result.estimatedPrice,
-                  fallback: result.fallback,
-                  fallbackCommune: result.fallbackCommune,
-                }}
-              />
-            </div>
-
             {!result.fallback && result.trendData && result.trendData.length >= 2 && (
               <PriceTrendCard trendData={result.trendData} />
             )}
@@ -475,8 +458,6 @@ export default function Estimation() {
             )}
           </>
         )}
-
-        <AdBanner />
 
         <SaleDetailDialog
           sale={selectedSale}

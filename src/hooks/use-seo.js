@@ -1,8 +1,5 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://chevillette.fr";
-const SITE_NAME = "Chevillette.fr";
-
 function setMeta(doc, attr, key, content) {
   let el = doc.head.querySelector("meta[" + attr + '="' + key + '"]');
   if (!content) {
@@ -17,40 +14,14 @@ function setMeta(doc, attr, key, content) {
   el.setAttribute("content", content);
 }
 
-function setCanonical(doc, href) {
-  let el = doc.head.querySelector('link[rel="canonical"]');
-  if (!href) {
-    if (el) el.remove();
-    return;
-  }
-  if (!el) {
-    el = doc.createElement("link");
-    el.setAttribute("rel", "canonical");
-    doc.head.appendChild(el);
-  }
-  el.setAttribute("href", href);
-}
-
-export function applySeo(doc, { title, description = "", path = "/", noindex = false }) {
+export function applySeo(doc, { title, description = "" }) {
   doc.title = title;
   setMeta(doc, "name", "description", description);
-  setMeta(doc, "name", "robots", noindex ? "noindex, nofollow" : "");
-  const url = SITE_URL && !noindex ? SITE_URL + path : "";
-  setCanonical(doc, url);
-  setMeta(doc, "property", "og:title", title);
-  setMeta(doc, "property", "og:description", description);
-  setMeta(doc, "property", "og:url", url);
-  setMeta(doc, "property", "og:type", "website");
-  setMeta(doc, "property", "og:locale", "fr_FR");
-  setMeta(doc, "property", "og:site_name", SITE_NAME);
-  setMeta(doc, "name", "twitter:card", "summary");
+  setMeta(doc, "name", "robots", "noindex, nofollow");
 }
 
-export default function useSeo({ title, description, path, noindex }) {
+export default function useSeo({ title, description }) {
   useEffect(() => {
-    const isBase44App =
-      typeof window !== "undefined" &&
-      window.location.hostname.endsWith(".base44.app");
-    applySeo(document, { title, description, path, noindex: noindex || isBase44App });
-  }, [title, description, path, noindex]);
+    applySeo(document, { title, description });
+  }, [title, description]);
 }
